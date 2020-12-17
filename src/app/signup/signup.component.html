@@ -1,0 +1,134 @@
+<app-navbar></app-navbar>
+<div class="wrapper">
+    <div class="page-header" style="background-image: url('./assets/img/addbike.jpg');">
+        <div class="filter"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-sm-6 mr-auto ml-auto">
+                      <div class="card card-register">
+                          <h3 class="title">Welcome</h3>
+                          <form class="register-form">
+                            <label>Name</label>
+                              <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus===true}">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text">
+                                      <i class="nc-icon nc-email-85"></i>
+                                  </span>
+                                </div>
+                                <input type="text" class="form-control" name="customerName" [(ngModel)]="customer.customerName" placeholder="Name" (focus)="focus=true" (blur)="focus=false" >
+                              </div>  
+                            <label>Email</label>
+                              <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus===true}">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text">
+                                      <i class="nc-icon nc-email-85"></i>
+                                  </span>
+                                </div>
+                                    <input type="text" class="form-control" name="customerEmail" [(ngModel)]="customer.customerEmail" placeholder="Email" (focus)="focus=true" (blur)="focus=false" >
+                              </div>
+                            <label>Adhar No</label>
+                              <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus===true}">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text">
+                                      <i class="nc-icon nc-email-85"></i>
+                                  </span>
+                                </div>
+                                <input type="text" class="form-control" name="aadharId" [(ngModel)]="customer.aadharId" placeholder="Adhar Number" (focus)="focus=true" (blur)="focus=false" >
+                              </div>
+                            <label>License No</label>
+                              <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus===true}">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text">
+                                      <i class="nc-icon nc-email-85"></i>
+                                  </span>
+                                </div>
+                                <input type="text" class="form-control" name="licenseNo" [(ngModel)]="customer.licenseNo" placeholder="License Number" (focus)="focus=true" (blur)="focus=false" >
+                              </div>
+                            <label>Street</label>
+                              <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus===true}">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text">
+                                      <i class="nc-icon nc-email-85"></i>
+                                  </span>
+                                </div>
+                                <input type="text" class="form-control" name="street" [(ngModel)]="address.street" placeholder="Address" (focus)="focus=true" (blur)="focus=false" >
+                              </div>
+                            <label>Landmark</label>
+                              <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus===true}">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text">
+                                      <i class="nc-icon nc-email-85"></i>
+                                  </span>
+                              
+                                </div>
+                                <input type="text" class="form-control" name="landmark" [(ngModel)]="address.landmark" placeholder="Address" (focus)="focus=true" (blur)="focus=false" >
+                              </div>
+                            <label>City</label>
+                              <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus===true}">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text">
+                                      <i class="nc-icon nc-email-85"></i>
+                                  </span>
+                                </div>
+                                <input type="text" class="form-control" name="city" [(ngModel)]="address.city" placeholder="Address" (focus)="focus=true" (blur)="focus=false" >
+                              </div>
+                            <label>State</label>
+                              <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus===true}">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text">
+                                      <i class="nc-icon nc-email-85"></i>
+                                  </span>
+                                </div>
+                                <input type="text" class="form-control" name="state" [(ngModel)]="address.state" placeholder="Address" (focus)="focus=true" (blur)="focus=false" >
+                              </div>
+                            <label>Zipcode</label>
+                              <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus===true}">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text">
+                                      <i class="nc-icon nc-email-85"></i>
+                                  </span>
+                                </div>
+                                <input type="text" class="form-control" name="zipcode" [(ngModel)]="address.zipcode" placeholder="Address" (focus)="focus=true" (blur)="focus=false" >
+                              </div>
+                            <label>Profile Picture</label>
+                              <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus===true}">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text">
+                                      <i class="nc-icon nc-email-85"></i>
+                                  </span>
+                                </div>
+                                <input #imageInput type="file" accept="image/*" (change)="processFile(imageInput)" class="form-control" name="image" placeholder="Profile Picture" (focus)="focus=true" (blur)="focus=false" >
+                              </div>
+                            <label>Username</label>
+                              <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus1===true}">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text">
+                                      <i class="nc-icon nc-key-25"></i>
+                                  </span>
+                                </div>
+                                <input type="text" class="form-control" name="username" [(ngModel)]="login.username" placeholder="Username" (focus)="focus1=true" (blur)="focus1=false" >
+                              </div>
+                            <label>Password</label>
+                              <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus1===true}">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text">
+                                      <i class="nc-icon nc-key-25"></i>
+                                  </span>
+                                </div>
+                                <input type="text" class="form-control" name="password" [(ngModel)]="login.password" placeholder="Password" (focus)="focus1=true" (blur)="focus1=false" >
+                              </div>
+                              <button class="btn btn-danger btn-block btn-round" (click)="register()">Register</button>
+                          </form>
+                          <div class="forgot">
+                              <a href="#" class="btn btn-link btn-danger">Forgot password?</a>
+                          </div>
+                      </div>
+                    </div> 
+                </div>
+                <div class="footer register-footer text-center">
+                    <h6>&copy;{{test | date: 'yyyy'}}, made with <i class="fa fa-heart heart"></i> by Creative Tim</h6>
+                </div>
+            </div>
+    </div>
+</div>
+<router-outlet></router-outlet>

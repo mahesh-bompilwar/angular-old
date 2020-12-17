@@ -1,0 +1,406 @@
+<div class="wrapper">
+    <div class="page-header" style="background-image: url('./assets/img/addbike.jpg');">
+        <div class="filter"></div>
+            <div class="container">
+                <div class="row">
+                     <div class="col-lg-8 col-sm-6 mr-auto ml-auto"> 
+                      <div class="card card-register">
+                          <h3 class="title">Register a Bike</h3>
+                          <form class="register-form">                       
+                            <div class="col-md-12 col-lg-12 col-sm-12">
+                              <div class="col-md-4 col-lg-4 col-sm-4">
+                                
+                                <label>Bike Name</label>
+                                <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus===true}">
+                                  <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="nc-icon nc-circle-10"></i>
+                                    </span>
+                                  </div>
+                                    <input  type="text" class="form-control" placeholder="Name" (focus)="focus=true" (blur)="focus=false" name="bikeName" [(ngModel)]="bike.bikeName" required >
+                                  </div>
+                              </div>
+
+
+                              <div class="col-md-4 col-lg-4 col-sm-4">
+                              <label>Bike Brand</label>
+                              <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus===true}">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text">
+                                      <i class="nc-icon nc-email-85"></i>
+                                  </span>
+                                </div>
+                                  <input type="email" class="form-control" placeholder="Email" (focus)="focus=true" (blur)="focus=false" name="bikeBrand" [(ngModel)]="bike.bikeBrand" >
+                              </div>
+                            </div>
+
+
+                              <div class="col-md-4 col-lg-4 col-sm-4">
+                             <label>Bike Picture</label>
+                              <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus===true}">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text">
+                                      <i class="nc-icon nc-email-85"></i>
+                                  </span>
+                                </div>
+                                <input #imageInput type="file" accept="image/*" (change)="processFile(imageInput)" class="form-control" name="bikeImage" placeholder="Bike Picture" (focus)="focus=true" (blur)="focus=false" >
+                              </div>
+                              </div>
+                            </div>
+                          
+
+                             <div class="col-md-12 col-lg-12 col-sm-12">
+                                <div class="col-md-4 col-lg-4 col-sm-4">
+                                    <label>Bike Number</label>
+                                    <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus===true}">
+                                      <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <i class="nc-icon nc-mobile"></i>
+                                        </span>
+                                      </div>
+                                        <input type="text" class="form-control" placeholder="Aadhar Number" (focus)="focus=true" (blur)="focus=false" name="bikeNumber" [(ngModel)]="bike.bikeNumber" >
+                                    </div>
+                                    </div>
+                               
+
+                                   <div class="col-md-4 col-lg-4 col-sm-4">                     
+                        <label>Bike Engine cc</label>
+                        <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus1===true}">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                <i class="nc-icon nc-pin-3"></i>
+                            </span>
+                          </div>
+                            
+                            <select name="locName" id="bikeEngCc" [(ngModel)]="bike.bikeEngCc">
+                              <option >select cc</option>
+                              <option >100</option>
+                              <option >125</option>
+                              <option >150</option>
+                          </select>
+                        </div>  
+                      </div>
+
+                                <div class="col-md-4 col-lg-4 col-sm-4">
+                                  <label>Manufacture Year</label>
+                                  <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus===true}">
+                                    <div class="input-group-prepend">
+                                      <span class="input-group-text">
+                                          <i class="nc-icon nc-single-02"></i>
+                                      </span>
+                                    </div>
+                                      <input type="text" class="form-control" placeholder="Username" (change)="checkusername(login.username)" (focus)="focus=true" (blur)="focus=false" name="manufactureYear" [(ngModel)]="bike.manufactureYear" >
+                                  </div>
+                                </div> 
+                          </div>
+   
+  
+                          <div class="col-md-12 col-lg-12 col-sm-12">
+                            
+                              <div class="col-md-4 col-lg-4 col-sm-4">
+                                <div *ngIf="showsu"><button class="btn btn-success btn-round" >{{messages.usernamemess}}</button></div>
+                                <div *ngIf="showda"><button class="btn btn-danger btn-round" >{{messages.usernamemess}}</button></div>
+                                <div *ngIf="showwa"><button class="btn btn-warning btn-round" >check Username</button></div>
+                                </div>                        
+                          </div>
+  
+                         
+  
+                          <div class="col-md-12 col-lg-12 col-sm-12">
+                            <div class="col-md-4 col-lg-4 col-sm-4">
+                                <label>Insurance Number</label>
+                              <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus1===true}">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text">
+                                      <i class="nc-icon nc-key-25"></i>
+                                  </span>
+                                </div>
+                                  <input type="text" class="form-control" placeholder="Password" (focus)="focus1=true" (blur)="focus1=false" name="insuranceNo" [(ngModel)]="bike.insuranceNo" >
+                              </div>  
+                          </div>
+                          
+                          
+                      
+  
+                      <div class="col-md-4 col-lg-4 col-sm-4">                     
+                        <label>Location</label>
+                        <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus1===true}">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                <i class="nc-icon nc-pin-3"></i>
+                            </span>
+                          </div>
+                            
+                            <select name="locName" id="locName" [(ngModel)]="location.locName">
+                              <option >select location</option>
+                              <option >Akurdi</option>
+                              <option >Nigdi</option>
+                          </select>
+                        </div>  
+                      </div>
+
+                      <!--<div class="col-md-4 col-lg-4 col-sm-4">
+                        <label>Dealer Name</label>
+                        <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus===true}">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                <i class="nc-icon nc-box"></i>
+                            </span>
+                          </div>
+
+                            <input type="text" class="form-control" placeholder="Employee Name" (focus)="focus=true" (blur)="focus=false" name="name" [(ngModel)]="dealer.name" >
+                        </div>
+                        </div>-->
+
+                        <div class="col-md-4 col-lg-4 col-sm-4">
+                      
+                        <label>Dealer Id</label>
+                        <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus===true}">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                <i class="nc-icon nc-box"></i>
+                            </span>
+                          </div>
+
+                            <input type="text" class="form-control" placeholder="Employee Name" (focus)="focus=true" (blur)="focus=false" name="dealerId" [(ngModel)]="dealer.dealerId" >
+                        </div>
+                        </div>
+                     </div>
+  
+
+                     <div class="col-md-12 col-lg-12 col-sm-12">
+                      
+
+                        
+                     </div>
+              
+
+                     <div class="col-md-12 col-lg-12 col-sm-12">
+                        <div class="col-md-4 col-lg-4 col-sm-4">
+                      
+                        <label>Per hour rate</label>
+                        <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus===true}">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                <i class="nc-icon nc-box"></i>
+                            </span>
+                          </div>
+
+                            <input type="text" class="form-control" placeholder="Employee Name" (focus)="focus=true" (blur)="focus=false" name="perHour" [(ngModel)]="bikesRate.perHour" >
+                        </div>
+                        </div>
+                        
+
+
+                                              
+                        <div class="col-md-4 col-lg-4 col-sm-4">
+                          
+                          <label>Per day rate</label>
+                        <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus===true}">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                <i class="nc-icon nc-calendar-60"></i>
+                            </span>
+                          </div>
+
+                            <input type="text" class="form-control" placeholder="Emplyee Phone Number" (focus)="focus=true" (blur)="focus=false" name="perDay" [(ngModel)]="bikesRate.perDay" >
+                        </div>
+
+                        </div>
+
+                            <div class="col-md-4 col-lg-4 col-sm-4">
+
+                              <label>Per week rate</label>
+                        <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus===true}">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                <i class="nc-icon nc-world-2"></i>
+                            </span>
+                          </div>
+
+                            <input type="text" class="form-control" placeholder="Employee Email" (focus)="focus=true" (blur)="focus=false" name="perWeek" [(ngModel)]="bikesRate.perWeek" >
+                        </div>
+                        
+                      </div>
+                    </div>
+
+
+                     <div class="col-md-12 col-lg-12 col-sm-12">
+  
+                      <div class="col-md-6 col-lg-6 col-sm-6">
+                     <button class="btn btn-danger btn-block btn-round" (click)="addBike(bike)">Register</button>
+                     </div>
+  
+                     <div class="col-md-6 col-lg-6 col-sm-6">
+                     <button class="btn btn-danger btn-block btn-round" [routerLink]="['/admin']">Back</button>
+                    </div>
+  
+                    </div>
+                    </form>
+                      </div>
+                     </div>  
+                </div>
+                <div class="footer register-footer text-center">
+                    <h6>&copy;{{test | date: 'yyyy'}}, made with <i class="fa fa-heart heart"></i> by Creative Tim</h6>
+                </div>
+            </div>
+
+    </div>
+  </div>
+
+  <div class="wrapper"  *ngIf="regsuc">
+    <div class="page-header" style="background-image: url('./assets/img/registration.png');">
+      <div class="card card-register">
+      <h3 style="color: blueviolet">Dealer {{dealer.name}} has been register successfully</h3>
+    </div>
+  </div>
+  </div>
+
+  <style>
+  .card-register {
+    width:1000px;
+  }
+  
+  .col-md-12 {
+      display: inline-flex;
+  }
+  </style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <!--<div class="col-md-4 col-lg-4 col-sm-4">
+                                    <label>Employee Type</label>
+                                    <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus1===true}">
+                                      <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <i class="nc-icon nc-pin-3"></i>
+                                        </span>
+                                      </div>
+                                        
+                                        <select name="employeeType" id="employeeType" [(ngModel)]="regemployee.employeeType">
+                                          <option>select location</option>
+                                          <option value="Employee" >Employee</option>
+                                          <option value="Admin" >Admin</option>
+                                      </select>
+                                    </div>
+                              </div>
+                          
+  
+  
+                        
+                              <div class="col-md-4 col-lg-4 col-sm-4">
+                                
+                                <label>Joining Date</label>
+                              <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus===true}">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text">
+                                      <i class="nc-icon nc-calendar-60"></i>
+                                  </span>
+                                </div>
+  
+                                  <input type="date" class="form-control" placeholder="joining Date" (focus)="focus=true" (blur)="focus=false" name="joiningDate" [(ngModel)]="regemployee.joiningDate" >
+                              </div>
+  
+                              </div>  -->
+   <!-- <div class="col-md-4 col-lg-4 col-sm-4">
+  
+                        <label>Profile image</label>
+                        <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus===true}">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                <i class="nc-icon nc-image"></i>
+                            </span>
+                          </div>
+  
+                            <input #imageInput type="file" accept="image/*" (change)="processFile(imageInput)" name="image" class="form-control" placeholder="profile image" (focus)="focus=true" (blur)="focus=false" >
+                        </div>
+  
+  
+                        
+                    </div> -->
+
+                    <!-- <div class="col-md-4 col-lg-4 col-sm-4">
+                            
+                              <label>Landmark</label>
+                              <div class="input-group form-group-no-border" [ngClass]="{'input-group-focus':focus===true}">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text">
+                                      <i class="nc-icon nc-box"></i>
+                                  </span>
+                                </div>
+  
+                                  <input type="text" class="form-control" placeholder="landmark" (focus)="focus=true" (blur)="focus=false" name="landmark" [(ngModel)]="address.landmark" >
+                              </div>
+                              </div> -->

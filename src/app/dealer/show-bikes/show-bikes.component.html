@@ -1,0 +1,56 @@
+
+<div class="wrapper">
+  <div class="page-header" style="background-image: url('./assets/img/bikeshow.jpg');">
+    <div>
+      <div class="container">
+        <div class="table-responsive-sm" class="mytablecustome">
+          <table class="table table-bordered">
+            <thead style="color: chartreuse">
+              <tr>
+                <th>Bike Id</th>
+                <th>Name</th>
+                <th>Brand</th>
+                <th>Bike number</th>
+                <th>Engine CC</th>
+                <th>Manufacture Year</th>
+                <th>Insurance No</th>
+                <th>Location</th>
+                <th>Per Hour</th>
+                <th>Per Day</th>
+                <th>Per Week </th>
+                </tr>
+            </thead>
+            <tbody style="color:red">
+              <tr *ngFor="let bike of allBikes">
+                <td>{{bike.bikeId}}</td>
+                <td>{{bike.bikeName}}</td>
+                <td>{{bike.bikeBrand}}</td>
+                <td>{{bike.bikeNumber}}</td>
+                <td>{{bike.bikeEngCc}}</td>
+                <td>{{bike.manufactureYear}}</td>
+                <td>{{bike.insuranceNo}}</td>
+                 <td>{{bike.location.locName}}</td>
+                <td>{{bike.bikesRate.perHour}}</td>
+                <td>{{bike.bikesRate.perDay}}</td>
+                <td>{{bike.bikesRate.perWeek}}</td>
+                
+               
+                <!-- <td><img [src]="domSanitizer.bypassSecurityTrustUrl(path)" alt="Circle Image"
+                    class="img-thumbnail img-responsive"></td> -->
+                <!--<td><button (click)="editemp()">Edit Info</button></td>-->
+                <td><button (click)="editemp()" type="button" class="btn btn-outline-info btn-round">Edit</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div *ngIf="">
+          <button (click)="updateempo()">Edit Details</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+  
+  
+  </style>
